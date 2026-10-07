@@ -1,0 +1,33 @@
+{
+    "Role": {
+        "Path": "/service-role/",
+        "RoleName": "AWSControlTowerCloudTrailRole",
+        "RoleId": "AROAV44FTSJNMQ766GHIE",
+        "Arn": "arn:aws:iam::405617742426:role/service-role/AWSControlTowerCloudTrailRole",
+        "CreateDate": "2026-10-07T06:22:15+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "cloudtrail.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        },
+        "MaxSessionDuration": 3600,
+        "Tags": [
+            {
+                "Key": "Project",
+                "Value": "landing-zone"
+            },
+            {
+                "Key": "ManagedBy",
+                "Value": "terraform"
+            }
+        ],
+        "RoleLastUsed": {}
+    }
+}
