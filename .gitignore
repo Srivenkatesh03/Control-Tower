@@ -1,15 +1,9 @@
 # Terraform
 .terraform/
-*.tfstate
-*.tfstate.*
-*.tfplan
 crash.log
 crash.*.log
 
 # Variable files containing client-specific values
-*.tfvars
-*.tfvars.json
-
 # Terraform lock file
 # Keep this file committed if you want reproducible provider versions.
 # .terraform.lock.hcl
