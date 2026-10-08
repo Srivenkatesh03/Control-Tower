@@ -1,10 +1,16 @@
 data "aws_caller_identity" "current" {}
 data "aws_partition" "current" {}
 data "aws_region" "current" {}
+data "aws_organizations_organization" "this" {}
 
 locals {
   account_id = data.aws_caller_identity.current.account_id
   partition  = data.aws_partition.current.partition
+
+  org_account_ids = [
+    for a in data.aws_organizations_organization.this.accounts : a.id
+    if a.status == "ACTIVE"
+  ]
 }
 
 data "aws_iam_policy_document" "ct_kms" {
@@ -29,10 +35,13 @@ data "aws_iam_policy_document" "ct_kms" {
       identifiers = ["config.amazonaws.com"]
     }
 
-    condition {
-      test     = "StringEquals"
-      variable = "aws:SourceAccount"
-      values   = [local.account_id, var.audit_account_id, var.log_archive_account_id]
+    dynamic "condition" {
+      for_each = var.restrict_config_key_to_org_accounts ? [1] : []
+      content {
+        test     = "StringEquals"
+        variable = "aws:SourceAccount"
+        values   = local.org_account_ids
+      }
     }
   }
 

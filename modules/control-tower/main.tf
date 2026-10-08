@@ -1,10 +1,10 @@
 locals {
   landing_zone_manifest = {
     governedRegions = var.governed_regions
-    
+
     backup = {
       enabled = false
-      }    
+    }
 
     centralizedLogging = {
       accountId = var.log_archive_account_id

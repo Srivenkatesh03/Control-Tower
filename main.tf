@@ -39,7 +39,8 @@ module "control_tower" {
   access_log_retention_days = var.control_tower.access_log_retention_days
 
   depends_on = [
-    module.control_tower_iam
+    module.control_tower_iam,
+    module.accounts
   ]
 }
 

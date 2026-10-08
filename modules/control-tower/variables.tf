@@ -53,3 +53,9 @@ variable "access_log_retention_days" {
   type        = number
   default     = 365
 }
+
+variable "restrict_config_key_to_org_accounts" {
+  description = "true: only accounts currently in the org may use the key via Config (re-apply before enrolling new accounts). false: AWS-documented unconditioned Config statement, works for any future account."
+  type        = bool
+  default     = true
+}
