@@ -19,20 +19,20 @@ organizational_units = {
 accounts = {
   log_archive = {
     name  = "log-archive"
-    email = "srive004+log@gmail.com"
+    email = "aws-log@yourdomain.com"
     ou    = "service_integration"
   }
 
   audit = {
     name  = "audit"
-    email = "srive004+audit@gmail.com"
+    email = "aws-audit@yourdomain.com"
     ou    = "service_integration"
   }
 
   dev = {
     name  = "dev"
-    email = "srive004+dev@gmail.com"
-    ou    = "dev"
+    email = "aws-dev@yourdomain.com"
+    ou    = "workloads"
   }
 }
 control_tower = {
@@ -41,9 +41,9 @@ control_tower = {
 }
 
 ou_registration = {
-  enabled                              = true
+  enabled                              = false
   baseline_version                     = "5.0"
-  identity_center_enabled_baseline_arn = "arn:aws:controltower:ap-south-1:405617742426:enabledbaseline/XAIJPJOAG7I6ZVBK8"
+  identity_center_enabled_baseline_arn = "arn:aws:"
 }
 
 # account_factory = {
@@ -65,17 +65,17 @@ ou_registration = {
 # }
 
 identity_center = {
-  enabled = true
+  enabled = false
   groups = {
     platform_admins = { name = "platform-admins", description = "Full access" }
   }
   users = {
     srivenkatesh = {
-      user_name    = "srive004+iam@gmail.com"
-      display_name = "sriV"
-      given_name   = "Sri"
+      user_name    = "aws-iam@yourdomain.com"
+      display_name = "your"
+      given_name   = "name"
       family_name  = "test"
-      email        = "srive004+iam@gmail.com"
+      email        = "aws-account@yourdomain.com"
       groups       = ["platform_admins"]
     }
   }
