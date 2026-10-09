@@ -51,12 +51,12 @@ module "ou_registration" {
   root_ous = {}
 
   child_ous = {
-  for ou_key in var.registered_child_ous :
-  ou_key => {
-    arn  = module.organizational_units.organizational_units[ou_key].arn
-    name = module.organizational_units.organizational_units[ou_key].name
+    for ou_key in var.registered_child_ous :
+    ou_key => {
+      arn  = module.organizational_units.organizational_units[ou_key].arn
+      name = module.organizational_units.organizational_units[ou_key].name
+    }
   }
-}
 
   baseline_version                     = var.ou_registration.baseline_version
   identity_center_enabled_baseline_arn = var.ou_registration.identity_center_enabled_baseline_arn
