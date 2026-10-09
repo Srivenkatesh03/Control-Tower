@@ -42,12 +42,27 @@ Key inputs:
 
 ## Usage
 
+set:
+ou_registration = {
+  enabled = false
+}
+
+identity_center = {
+  enabled = false
+}
+
 ```bash
 terraform init
 terraform fmt -recursive
 terraform validate -var-file=terraform.tfvars
 terraform plan -var-file=terraform.tfvars
-terraform apply -var-file=terraform.tfvars
+terraform apply -target=module.organizations -var-file=terraform.tfvars
+terraform apply -target=module.organizational_units -var-file=terraform.tfvars
+terraform apply -target=module.accounts -var-file=terraform.tfvars
+terraform apply -target=module.control_tower_iam -var-file=terraform.tfvars
+terraform apply -target=module.control_tower -var-file=terraform.tfvars
+
+
 ```
 
 ## Outputs
