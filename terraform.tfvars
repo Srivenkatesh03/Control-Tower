@@ -11,13 +11,13 @@ mandatory_tags = {
 }
 
 organizational_units = {
-  workloads = { name = "Workloads" }
+  workloads = { name = "Security" }
   dev       = { name = "dev" }
 }
 
 accounts = {
-  log_archive = { name = "log-archive", email = "srive004+log@gmail.com", ou = "workloads" }
-  audit       = { name = "audit", email = "srive004+audit@gmail.com", ou = "workloads" }
+  log_archive = { name = "log-archive", email = "srive004+log@gmail.com", ou = "Security" }
+  audit       = { name = "audit", email = "srive004+audit@gmail.com", ou = "Security" }
   dev         = { name = "dev", email = "srive004+dev@gmail.com", ou = "dev" }
 }
 
