@@ -263,3 +263,9 @@ variable "identity_center" {
     error_message = "Each user's groups must be keys of identity_center.groups."
   }
 }
+
+variable "registered_child_ous" {
+  description = "OU keys to register with Control Tower"
+  type        = set(string)
+  default     = []
+}
