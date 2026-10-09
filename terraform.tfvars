@@ -11,16 +11,30 @@ mandatory_tags = {
 }
 
 organizational_units = {
-  workloads = { name = "workloads" }
-  dev       = { name = "dev" }
+  service_integration = { name = "ServiceIntegration" }
+  workloads            = { name = "Workloads" }
+  dev                  = { name = "dev", parent = "workloads" }
 }
 
 accounts = {
-  log_archive = { name = "log-archive", email = "srive004+log@gmail.com", ou = "workloads" }
-  audit       = { name = "audit", email = "srive004+audit@gmail.com", ou = "workloads" }
-  dev         = { name = "dev", email = "srive004+dev@gmail.com", ou = "dev" }
-}
+  log_archive = {
+    name  = "log-archive"
+    email = "srive004+log@gmail.com"
+    ou    = "service_integration"
+  }
 
+  audit = {
+    name  = "audit"
+    email = "srive004+audit@gmail.com"
+    ou    = "service_integration"
+  }
+
+  dev = {
+    name  = "dev"
+    email = "srive004+dev@gmail.com"
+    ou    = "dev"
+  }
+}
 control_tower = {
   landing_zone_version = "4.0"
   governed_regions     = ["ap-south-1"]
