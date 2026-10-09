@@ -12,8 +12,8 @@ mandatory_tags = {
 
 organizational_units = {
   service_integration = { name = "ServiceIntegration" }
-  workloads            = { name = "Workloads" }
-  dev                  = { name = "dev", parent = "workloads" }
+  workloads           = { name = "Workloads" }
+  dev                 = { name = "dev", parent = "workloads" }
 }
 
 accounts = {
